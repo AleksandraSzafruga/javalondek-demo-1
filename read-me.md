@@ -37,6 +37,21 @@ Git - good practices
         * wypchnij feature branch do swojego zdalnego repo
         * zgłoś pull request:)
         * w razie problemów powtórz :)
+* tymczasowe odkładanie zmian
+    * możemy uzyć stach'a ale:
+        * możemy pomylić branch'e przy zdejmowaniu
+        * stash nie jest związany z żadnym branchem i może zawierać tymczasowe zmiany z różnych miejsc
+    * używamy tymczasowych commitów
+    * oznaczamy je przez prefix [WIP] - work in progress
+    * po powrocie z innego branch'a kasujemy commit lub wykonujemy amend
+    * jak kasować commit'y:
+        * wybierz jakiś wcześniejszy commit
+        * opcja reset (najlepiej soft - commit/commit'y zostaje skasowany, zmiany wracają do drzewa roboczego)
+        * wykonaj nowy, już prawidłowy commit z docelowymi zmianami
+        * reset --hard kasuje commit (prawie) bezpowrotnie
+    * pamietaj że przy uzyciu git reflog możesz przywrócić skasowane i niewidoczne commit'y
+  
+
 
 Git - przydatne komendy
 git status
@@ -51,3 +66,8 @@ git log --graph // rysuje graf historii w konsoli
 git branch -a // pokaż wszystkie branch'e
 git fetch // aktualizacja metadanych o zdalnych repozytoriach
 git branch -d feature/animal-mp - usuwa zmergowany branch
+git stash - odłóż na półkę
+git stash pop - zdejmij z półki
+git reflog - pokaż dziennik git'a (pomaga przy utraconych commit'ach)
+git stash list - opkaż co jest na półce 
+git stash apply - zaakplikuj ostatnie zmiany ze stash'a
