@@ -22,6 +22,21 @@ Git - good practices
         * fast forward nie zawsze jest możliwy - działa tylko w przypadku gdy jeden branch może "dogonić" drugi
         * zawsze można wymusić commit mergujący
         * pull'uj branch'e tylko przy czystym drzewie roboczym
+* współpraca zdalna
+    * publikuj nowe feature'y na feature branch'ach
+    * przed zgłoszeniem pull request'a zawsze najpierw zmerguj zmiany do siebie z docelowego branch'a
+    * konflikty rozwiązuj zawsze na swoim branchu
+    * pull request - procedura
+        * zrób forka docelowego repozytorium
+        * zrób feature branch od developa
+        * przełącz się na lokalny branch develop
+        * zrób pull z oryginalnego repozytorium
+        * zrób push'a do mojego zdalnego repozytorium (wyrównuje developa pomiędzy moim zdalnym a oryginalnym)
+        * wróć na feature branch
+        * zmerguj do siebie zmiany z lokalnego developa
+        * wypchnij feature branch do swojego zdalnego repo
+        * zgłoś pull request:)
+        * w razie problemów powtórz :)
 
 Git - przydatne komendy
 git status
@@ -35,3 +50,4 @@ git checkout -b branch-name // przełącz na nowo utworzony branch
 git log --graph // rysuje graf historii w konsoli
 git branch -a // pokaż wszystkie branch'e
 git fetch // aktualizacja metadanych o zdalnych repozytoriach
+git branch -d feature/animal-mp - usuwa zmergowany branch
